@@ -33,10 +33,7 @@ const config = {
 }
 
 module.exports = (bot) => {
-  console.log("loaded")
   bot.hears(/@hedron/i, (ctx) => {
-    console.log("bot hears")
-
     // filter out the bot name
     const question = ctx.message.text.replace("@hedron", "")
 
@@ -44,17 +41,14 @@ module.exports = (bot) => {
     const assistant = new GoogleAssistant(config.auth);
     assistant
       .on('ready', () => {
-        console.log("telegramInput")
         // start the conversation
         config.conversation.textQuery = question;
         // assistant.start(config.conversation, startConversation);
         assistant.start(config.conversation);
       })
       .on("started", (conversation) => {
-        console.log("started")
         conversation
           .on('response', (text) => {
-            console.log("response")
             // do stuff with the text that the assistant said back
             ctx.reply(text)
           })
