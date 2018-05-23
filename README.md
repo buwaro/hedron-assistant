@@ -1,7 +1,7 @@
 # hedron-assistant
 
 ## Setup
-- Clone this repo into the addons folder of hedron: git clone git@github.com:buwaro/hedron-assistant.git
+- **Clone this repo into the addons folder of hedron:** `git clone git@github.com:buwaro/hedron-assistant.git`
 ### googleapis
 - **Clone the googleapis repo next to the hedron-bot folder:** `git clone https://github.com/googleapis/googleapis`
 - **Rename the googleapis folder to lib:** `mv googleapis lib`
