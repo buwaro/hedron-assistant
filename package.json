@@ -1,0 +1,19 @@
+{
+  "name": "hedron-assistant",
+  "version": "0.0.1",
+  "description": "google assistant integration for hedron-bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape -r ./tests/test_setup.js tests/**/*.js"
+  },
+  "dependencies": {
+    "google-assistant": "^0.4.1",
+    "tape": "^4.8.0"
+  },
+  "author": "Furexa (buwaro)",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/buwaro/hedron-assistant.git"
+  }
+}
