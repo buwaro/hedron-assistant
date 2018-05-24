@@ -1,3 +1,5 @@
+'use strict';
+
 global.__addondirHedronRoll = __addonsdir + "/" + "hedron-assistant"
 
 const path = require('path');
@@ -33,9 +35,10 @@ const config = {
 }
 
 module.exports = (bot) => {
-  bot.hears(/@hedron/i, (ctx) => {
+
+  bot.mention(bot.options.username, (ctx) => {
     // filter out the bot name
-    const question = ctx.message.text.replace("@hedron", "")
+    const question = ctx.message.text.replace(bot.options.username, "")
 
     // The assistant doesn't work if it's not initialized inside the bot.hears callback
     const assistant = new GoogleAssistant(config.auth);
